@@ -7,7 +7,7 @@ const {sequelize} = require("../database/models")
 const app = express()
 const PORT = process.env.PORT || 8082
 
-sequelize.sync({alter: true}).then(() => {
+sequelize.sync({force: true}).then(() => {
     console.log("Banco de dados ativo")
 }).catch(err => {
     console.error(err)

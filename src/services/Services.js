@@ -4,10 +4,10 @@ class Services{
     constructor(model){
         this.model = model
     }
-
+    
     async findAll(){
         try {
-            const find = await model[this.model].findAll()
+            const find = await database[this.model].findAll()
             return find
         } catch (error) {
             throw new Error(error)
@@ -16,7 +16,7 @@ class Services{
 
     async findById(id){
         try {
-            const find = await model[this.model].findByPk(id)
+            const find = await database[this.model].findByPk(id)
         } catch (error) {
             throw new Error(error)
         }
@@ -24,7 +24,7 @@ class Services{
 
     async create(body){
         try {
-            const create = await model[this.model].create(body)
+            const create = await database[this.model].create(body)
             return create
         } catch (error) {
             throw new Error(error)
@@ -33,7 +33,7 @@ class Services{
 
     async update(body, id){
         try {
-            const update = await model[this.model].update(body, {where: {id}})
+            const update = await database[this.model].update(body, {where: {id}})
             return update
         } catch (error) {
             throw new Error(error)
@@ -42,7 +42,7 @@ class Services{
 
     async removeById(id){
         try {
-            const destroy = await model[this.model].destroy({where: {id}})
+            const destroy = await database[this.model].destroy({where: {id}})
             return destroy
         } catch (error) {
             throw new Error(error)

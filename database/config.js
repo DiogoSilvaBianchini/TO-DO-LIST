@@ -8,7 +8,8 @@ module.exports = {
     "password": DATABASE_PASS,
     "database": DATABASE_NAME,
     "host": DATABASE_HOST,
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false
   },
   // "test": {
   //   "username": "root",
